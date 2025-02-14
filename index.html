@@ -38,7 +38,18 @@ Recuerda que hoy y siempre te amaré. Incluso cuando mi cuerpo expire, mi alma s
         </div>
     </div>
     
-    <script >        envelope.classList.toggle('flap');
+    <script > const envelope = document.querySelector('.envelope-wrapper');
+        const letter = document.querySelector('.letter');
+        
+        
+        document.addEventListener('click', (e) => {
+            if (
+                e.target.matches(".envelope") || 
+                e.target.matches(".tap-right") || 
+                e.target.matches(".tap-left") || 
+                e.target.matches(".heart")
+            ) {
+                envelope.classList.toggle('flap');
             } else if (e.target.matches(".envelope *")) {
                 if (!letter.classList.contains('opened')) {
                     letter.classList.add("letter-opening");
@@ -59,6 +70,6 @@ Recuerda que hoy y siempre te amaré. Incluso cuando mi cuerpo expire, mi alma s
                 }
             }
         }); 
-    </script>
+        </script>
 </body>
 </html>
